@@ -1,0 +1,41 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/paper/bootstrap.min.css">
+</head>
+
+<body>
+
+  <div class= "container">
+    <div class="col-md-6">
+      <h1>All Photos</h1>
+
+      <a href="/photos/new">Add a new photo</a>
+    </div>
+  </div>
+
+
+  <% @list_of_all_photos.reverse.each do |onephoto|%>
+  <% @id=onephoto.id %>
+  <div class= "container">
+    <div class="col-md-6">
+      <img src="<%= onephoto.source %>">
+
+      <a href="/photos/<%= @id %>" class="btn btn-default btn-block">
+        Show Details
+      </a>
+
+      <a href="/photos/<%= @id %>/edit" class="btn btn-default btn-block">
+        Edit
+      </a>
+
+      <a href="/delete_photo/<%= @id %>" class="btn btn-default btn-block">
+        Delete
+      </a>
+    </div>
+  </div>
+  <% end %>
+
+
+</body>
+</html>

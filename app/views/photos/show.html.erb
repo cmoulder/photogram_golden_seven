@@ -1,0 +1,33 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/paper/bootstrap.min.css">
+</head>
+
+<body>
+  <h1>Photo Details</h1>
+
+  <p><h4><%= @caption %></h4></p>
+  <p><img src="<%= @source %>"></p>
+  <p> <%= time_ago_in_words(@utime) %></p>
+
+  <p>
+    <div class="container">
+      <div class="col-md-6">
+        <a href="/photos" class="btn btn-default">
+          Go back
+        </a>
+
+        <a href="/photos/<%= @id %>/edit" class="btn btn-default">
+          Edit
+        </a>
+
+        <a href="/delete_photo/<%= @id %>" class="btn btn-default">
+          Delete
+        </a>
+      </div>
+      </div
+    </p>
+  </body>
+
+  </html>
